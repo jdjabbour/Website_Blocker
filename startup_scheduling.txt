@@ -1,0 +1,26 @@
+# This is a quick how-to for setting up your blocker to run when 
+# your system boots up.
+# !! MAKE SURE TO BACKUP ANY AND ALL FILES BEFORE IMPLEMENTING!!
+
+# Windows - any version
+ ** Make sure curser is on a new line at the end of the Host file
+ ** Need to be admin to run due to changing the host file
+ ** Change the extention from .py to .pyw
+ ** when changed you can then double click the name of the program and it will
+      run from windows exporer and not command line.
+ ** You can see that it is running in the task manager
+ ** Go to task scheduler - create a task - configure for W7 - run with highest 
+     privilages (admin)
+ ** Trigers - new - Begin the task - from dropdown select Startup
+ ** Actions - new - start a program - select your app
+ ** save
+ ** From here you should be able to see your app run upon your system starting
+      up.
+
+# Linux and Mac
+ ** Use the CRON service to schedule your application
+ ** Make sure your curser is at a new line in the hosts file. /etc/hosts
+ ** sudo crontab -e (need to use sudo since this will need sudo privileges)
+ ** at the end of the file enter:
+    @reboot python3 /path/to/file/blocker.py
+
